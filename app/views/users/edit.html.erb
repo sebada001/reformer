@@ -1,0 +1,23 @@
+<%= form_with model: @user, method: :patch do |form| %>
+  <%= label_tag(:username, "Username:")%>
+  <%= text_field_tag(:username)%>
+  <%= label_tag(:password, "Password:")%>
+  <%= password_field_tag(:password)%>
+  <%= label_tag(:email, "Email:")%>
+  <%= text_field_tag(:email, "msn@abc.kam")%>
+  <%= submit_tag("Submit!")%>
+
+
+    <div>
+    <%= @user.errors.messages.any? %>
+    </div>
+<% end %>
+
+
+<div>
+    <ul>
+        <li>user: <%=  @user.username %></li>
+        <li>pass: <%= @user.password %></li>
+        <li>email: <%= @user.email %></li>
+    </ul>
+</div>
